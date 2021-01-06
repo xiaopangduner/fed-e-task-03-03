@@ -53,8 +53,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /root/realworld-nuxtjs
+          cd root/realworld-nuxtjs
           wget https://github.com/xiaopangduner/fed-e-task-03-03/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
+          rm release.tgz
           npm install --production
           pm2 reload pm2.config.json
